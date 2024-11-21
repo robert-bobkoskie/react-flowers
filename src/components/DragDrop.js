@@ -10,13 +10,16 @@ import Fireworks from "./Fireworks";
 const PictureList = [
   {
     id: 1,
-    url: "/images/ROB-BADGE-PIC.jpg",
+	// url: "/images/ROB-BADGE-PIC.jpg",
+    url: process.env.PUBLIC_URL + "/images/ROB-BADGE-PIC.jpg",
   },
   {
     id: 2,
-    url: "/images/roses_1.jpg",
+	// url: "/images/roses_1.jpg",
+    url: process.env.PUBLIC_URL + "/images/roses_1.jpg",
   },
 ];
+
 
 function DragDrop() {
   const [board, setBoard] = useState([]);
@@ -56,12 +59,14 @@ function DragDrop() {
     return (
       <div id="fireworks-img"><div style={{ textAlign: "center", top: "0px", position: "absolute", fontSize: "32px" }}>
           Cheers To Us &#x03A7;&#x03A9;
-        </div><img src="/images/fireworks.gif" alt="new" /></div>
+		  {/* </div><img src="/images/fireworks.gif" alt="new" /></div> */}
+	  </div><img src={process.env.PUBLIC_URL + "/images/fireworks.gif"} alt="fireworks" /></div>
     );
   };
 
   const myDate = {
-    backgroundImage: "url('/images/Elizabeth.jfif')",
+    // backgroundImage: "url('/images/Elizabeth.jfif')",
+	backgroundImage: `url(${process.env.PUBLIC_URL}/images/Elizabeth.jfif)`,
   };
 
   return (
@@ -72,7 +77,7 @@ function DragDrop() {
           return (
             <div key={picture.id} style={{ position: 'relative' }}><Picture url={picture.url} id={picture.id} style={style} className={className} />
               {picture.id === 2 && !isImageGrabbed && (
-                <img src="/images/hand_1.png" alt="hand" className={`hand ${className}`} />
+				  <img src={process.env.PUBLIC_URL + "/images/hand_1.png"} alt="hand" className={`hand ${className}`} />
               )}
             </div>
           );
