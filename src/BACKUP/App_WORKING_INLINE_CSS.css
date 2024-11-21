@@ -1,0 +1,54 @@
+/* src/App.css */
+
+* {
+  background-color: black;
+  color: yellow;
+}
+
+img {
+  margin: 5px;
+}
+
+.App {
+  text-align: left;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Pictures {
+  z-index: 10;
+  position: absolute;
+  inset: 100px 2000px 30px 40px;
+  margin: 10px;
+}
+
+.Board {
+  z-index: 10;
+  position: absolute;
+  right: 7%;
+  top: 100px;
+  width: 250px;
+  height: 250px;
+  border: 2px solid black;
+}
+
+.Hooray {
+  z-index: 5; /* Adjusted to be below Pictures and Board */
+  font-size: 22px;
+  position: absolute;
+  left: 22%;
+  right: auto;
+  top: 15px;
+}
+
+#fireworks-img img {
+  width: 300%; /* Adjust percentage as needed */
+  height: auto; /* Maintain aspect ratio */
+  /* max-width: 5000px; */
+  display: block;
+  margin: 0 auto;
+}
+
+#container {
+  display: inline-block;
+}

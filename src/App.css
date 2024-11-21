@@ -1,0 +1,109 @@
+/* src/App.css */
+
+* {
+  background-color: black;
+  color: yellow;
+}
+
+img {
+  margin: 5px;
+}
+
+.App {
+  text-align: left;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Pictures {
+  z-index: 10;
+  position: absolute;
+  inset: 100px 2000px 30px 40px;
+  margin: 10px;
+}
+
+.Board {
+  z-index: 10;
+  position: absolute;
+  right: 7%;
+  top: 100px;
+  width: 250px;
+  height: 250px;
+  border: 2px solid black;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.Hooray {
+  z-index: 5;
+  font-size: 22px;
+  position: absolute;
+  left: 22%;
+  top: 15px;
+}
+
+#fireworks-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8); /* Optional: to add some background overlay */
+  z-index: 1000; /* Ensure it appears on top of other elements */
+}
+
+#fireworks-img img {
+  width: 110%;
+  height: 110%;
+  object-fit: cover;
+}
+
+#container {
+  display: inline-block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  z-index: 10;
+  position: relative;
+  text-align: justify;
+}
+
+img.dragging {
+  border: 5px solid yellow;
+}
+
+img.picture {
+  position: relative;
+  width: 170px;
+}
+
+/* New CSS for synchronized animation */
+@keyframes grab {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(20px, -20px);
+  }
+}
+
+.hand-grab {
+  animation: grab 1.5s infinite;
+  position: relative;
+  cursor: pointer;
+}
+
+.hand {
+  position: relative;
+  width: 50px; /* Adjust the size as needed */
+  top: -30px; /* Adjust the position as needed */
+  left: -30px; /* Adjust the position as needed */
+  pointer-events: none; /* Ensure the hand image does not interfere with dragging */
+}
